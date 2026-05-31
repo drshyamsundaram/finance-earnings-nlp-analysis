@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "finance-earnings-nlp-analysis"
+version = "0.1.0"
+description = "Transcript-driven earnings NLP analysis with interactive HTML reporting"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "pandas",
+  "scikit-learn",
+  "PyMuPDF"
+]
+
+[project.scripts]
+finance-earnings-nlp-analysis = "finance_earnings_nlp_analysis.cli:main"
