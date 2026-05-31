@@ -6,37 +6,296 @@
   <title>Finance Earnings NLP analysis</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    body { font-family: Arial, sans-serif; margin: 24px; background: #f7f6f2; color: #1f1d18; }
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .card { background: white; border: 1px solid #ddd; border-radius: 12px; padding: 18px; }
-    table { width: 100%; border-collapse: collapse; }
-    th, td { padding: 8px; border-bottom: 1px solid #eee; text-align: left; }
+    :root {
+      --bg: #f3f4f6;
+      --surface: #ffffff;
+      --text: #1f2937;
+      --muted: #4b5563;
+      --border: #e5e7eb;
+      --primary: #4338ca;
+      --accent: #2563eb;
+      --card-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+      --surface-soft: #f9fafb;
+      --badge-bg: #eef2ff;
+    }
+    .dark-mode {
+      --bg: #0f172a;
+      --surface: #111827;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --border: #334155;
+      --primary: #93c5fd;
+      --accent: #60a5fa;
+      --card-shadow: 0 16px 40px rgba(15, 23, 42, 0.35);
+      --surface-soft: #1e293b;
+      --badge-bg: #334155;
+    }
+    .accent-mode {
+      --primary: #14b8a6;
+      --accent: #0f766e;
+      --surface-soft: #dcfce7;
+      --badge-bg: #d1fae5;
+    }
+    body { font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif; margin: 0; background: var(--bg); color: var(--text); }
+    .page { max-width: 1400px; margin: 0 auto; padding: 28px 24px 48px; }
+    h1, h2, h3 { margin: 0 0 12px; }
+    .hero { display: grid; gap: 18px; margin-bottom: 24px; }
+    .hero h1 { font-size: 2.4rem; }
+    .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 16px; }
+    .card, .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 20px; box-shadow: var(--card-shadow); }
+    .card p, .panel p { margin: 0; color: var(--muted); }
+    .metric { font-size: 1.1rem; font-weight: 700; color: var(--text); }
+    .metric-label { color: var(--muted); margin-top: 6px; display: block; }
+    .grid-2 { display: grid; grid-template-columns: 1.35fr 1fr; gap: 20px; margin-top: 24px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 20px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    th, td { padding: 12px 10px; border-bottom: 1px solid var(--border); text-align: left; }
+    th { font-weight: 600; color: var(--text); }
+    td { color: var(--muted); vertical-align: top; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; background: var(--badge-bg); color: #4338ca; font-size: 0.85rem; margin: 0 6px 6px 0; }
+    .small-text { font-size: 0.95rem; color: var(--muted); }
+    .input-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 14px; }
+    .input-row input { flex: 1; min-width: 180px; border: 1px solid var(--border); border-radius: 12px; padding: 10px 14px; font-size: 0.95rem; background: var(--surface-soft); color: var(--text); }
+    .button { border: none; background: var(--primary); color: white; padding: 10px 16px; border-radius: 10px; cursor: pointer; font-weight: 600; }
+    .button:hover { background: #3730a3; }
+    .button.secondary { background: var(--surface-soft); color: var(--text); border: 1px solid var(--border); }
+    .sentence-card { background: var(--surface-soft); border: 1px solid var(--border); border-radius: 14px; padding: 14px; margin-bottom: 12px; }
+    .sentence-card strong { display: block; margin-bottom: 6px; color: var(--text); }
+    .sentence-card span { color: var(--muted); font-size: 0.92rem; }
+    .topic-chip { display: inline-flex; padding: 8px 12px; border-radius: 999px; background: #e0f2fe; color: #0c4a6e; margin: 0 10px 10px 0; font-size: 0.92rem; }
+    .section-title { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
+    .section-title .note { color: var(--muted); font-size: 0.95rem; }
+    .section-row { display: grid; gap: 20px; }
+    @media (max-width: 960px) { .grid-2, .grid-3, .summary { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
-  <h1>Finance Earnings NLP analysis</h1>
-  <div id="summary"></div>
-  <div class="grid">
-    <div class="card"><h2>Top terms</h2><canvas id="termsChart"></canvas></div>
-    <div class="card"><h2>Sentiment mix</h2><canvas id="sentimentChart"></canvas></div>
+  <div class="page">
+    <div class="hero">
+      <div>
+        <h1>Finance Earnings NLP analysis</h1>
+        <p class="small-text">Interactive executive summary for <strong id="documentName"></strong>. Use the dashboard below to explore top themes, sentiment strength, KPI signals, and emerging topics.</p>
+      </div>
+      <div style="display:flex; align-items:center; justify-content:flex-end; gap:12px; flex-wrap:wrap;">
+        <button class="button secondary" id="themeToggle">Dark mode</button>
+        <button class="button secondary" id="paletteToggle">Accent palette</button>
+      </div>
+      <div class="summary" id="summaryCards"></div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="section-title"><h2>Top terms & phrases</h2><span class="note">Frequent concepts in the transcript</span></div>
+        <canvas id="termsChart" style="height: 320px;"></canvas>
+      </div>
+      <div class="card">
+        <div class="section-title"><h2>Sentiment balance</h2><span class="note">Positive, neutral, and negative sentence counts</span></div>
+        <canvas id="sentimentChart" style="height: 320px;"></canvas>
+      </div>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="section-title"><h2>Theme spotlight</h2><span class="note">Sector-specific emphasis</span></div>
+        <table><thead><tr><th>Theme</th><th>Hits</th></tr></thead><tbody id="themeTable"></tbody></table>
+      </div>
+      <div class="card">
+        <div class="section-title"><h2>Phrase trends</h2><span class="note">Recurring multi-word concepts</span></div>
+        <div class="input-row"><input id="phraseSearch" placeholder="Search phrase trends..." /></div>
+        <table><thead><tr><th>Phrase</th><th>Count</th></tr></thead><tbody id="phraseTable"></tbody></table>
+      </div>
+      <div class="card">
+        <div class="section-title"><h2>Topic model</h2><span class="note">Latent themes from grouped sentences</span></div>
+        <div id="topicGrid"></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 24px;">
+      <div class="section-title"><div><h2>KPI & forward-looking insights</h2><p class="small-text">Search, filter, and review the most relevant metric sentences.</p></div><div style="display:flex; gap: 10px; flex-wrap:wrap;"><button class="button" id="downloadJson">Download JSON</button><button class="button secondary" id="downloadCsv">Export summary CSV</button></div></div>
+      <div class="input-row"><input id="kpiSearch" placeholder="Filter KPI sentences by term e.g. revenue, margin, cash flow" /></div>
+      <div id="kpiList"></div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="section-title"><h2>Sentiment examples</h2><span class="note">Representative positive, neutral, and negative sentences</span></div>
+        <div id="sentimentExamples"></div>
+      </div>
+      <div class="card">
+        <div class="section-title"><h2>Uncertainty / Forward looking</h2><span class="note">Hedge language and potential outlook statements</span></div>
+        <div id="uncertaintyList"></div>
+        <div style="margin-top: 20px;"><h3 style="margin-bottom: 10px;">Most uncertain outlook statements</h3><div id="mostUncertainList"></div></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 24px;">
+      <div class="section-title"><h2>Executive highlights</h2><span class="note">Key performance and narrative takeaways</span></div>
+      <ul id="highlights" style="padding-left: 20px; margin: 0;"></ul>
+    </div>
   </div>
-  <div class="grid">
-    <div class="card"><h2>Themes</h2><table><thead><tr><th>Theme</th><th>Hits</th></tr></thead><tbody id="themeTable"></tbody></table></div>
-    <div class="card"><h2>KPI extraction</h2><div id="kpiList"></div></div>
-  </div>
+
   <script>
     const report = __REPORT_DATA__;
-    document.getElementById('summary').innerHTML = `<p><strong>${report.document}</strong> · ${report.sentence_count} sentences · ${report.token_count} tokens · ${report.unique_terms} unique terms</p>`;
-    document.getElementById('themeTable').innerHTML = report.themes.map(x => `<tr><td>${x.theme}</td><td>${x.term_hits}</td></tr>`).join('');
-    document.getElementById('kpiList').innerHTML = report.kpis.map(x => `<p>${x.kpi_sentence}</p>`).join('');
+
+    const highlightValues = [
+      { label: 'Document', value: report.document },
+      { label: 'Sentences', value: report.sentence_count },
+      { label: 'Tokens', value: report.token_count },
+      { label: 'Unique terms', value: report.unique_terms },
+      { label: 'Themes detected', value: report.themes.length },
+      { label: 'KPI sentences', value: report.kpis.length },
+      { label: 'Forward-looking sentences', value: report.uncertainty_sentences.length }
+    ];
+
+    document.getElementById('documentName').textContent = report.document;
+    document.getElementById('summaryCards').innerHTML = highlightValues.map(item => `<div class="card"><div class="metric">${item.value}</div><div class="metric-label">${item.label}</div></div>`).join('');
+
+    const topThemes = report.themes.slice(0, 6);
+    document.getElementById('themeTable').innerHTML = topThemes.map(x => `<tr><td>${x.theme}</td><td>${x.term_hits}</td></tr>`).join('');
+    document.getElementById('phraseTable').innerHTML = report.top_phrases.map(x => `<tr><td>${x.phrase}</td><td>${x.count}</td></tr>`).join('');
+    document.getElementById('topicGrid').innerHTML = report.topics.map(topic => `<div class="topic-chip"><strong>${topic.topic}:</strong> ${topic.terms}</div>`).join('');
+
+    function renderSentimentList(type, rows) {
+      if (!rows || rows.length === 0) {
+        return `<div class="sentence-card"><strong>${type}</strong><p>No sentences available.</p></div>`;
+      }
+      return rows.map(row => `<div class="sentence-card"><strong>${type}</strong><p>${row.sentence}</p><span>Score: ${row.score}</span></div>`).join('');
+    }
+
+    document.getElementById('sentimentExamples').innerHTML =
+      renderSentimentList('Positive', report.sentiment_examples.positive) +
+      renderSentimentList('Neutral', report.sentiment_examples.neutral) +
+      renderSentimentList('Negative', report.sentiment_examples.negative);
+
+    document.getElementById('uncertaintyList').innerHTML = report.uncertainty_sentences.length
+      ? report.uncertainty_sentences.map(item => `<div class="sentence-card"><p>${item.sentence}</p><span>Hedge hits: ${item.hedge_hits}</span></div>`).join('')
+      : '<p class="small-text">No hedge or forward-looking language detected.</p>';
+
+    document.getElementById('mostUncertainList').innerHTML = report.most_uncertain.length
+      ? report.most_uncertain.map(item => `<div class="sentence-card"><p>${item.sentence}</p><span>Hedge hits: ${item.hedge_hits}</span></div>`).join('')
+      : '<p class="small-text">No prioritized uncertain statements available.</p>';
+
+    function renderKpis(filter = '') {
+      const query = filter.trim().toLowerCase();
+      const visible = report.kpis.filter(item => !query || item.kpi_sentence.toLowerCase().includes(query));
+      if (!visible.length) return '<p class="small-text">No KPI sentences match the filter.</p>';
+      return visible.map(item => `<div class="sentence-card"><p>${item.kpi_sentence}</p></div>`).join('');
+    }
+
+    const kpiList = document.getElementById('kpiList');
+    const searchInput = document.getElementById('kpiSearch');
+    kpiList.innerHTML = renderKpis();
+    searchInput.addEventListener('input', () => { kpiList.innerHTML = renderKpis(searchInput.value); });
+
+    function renderPhrases(filter = '') {
+      const query = filter.trim().toLowerCase();
+      const visible = report.top_phrases.filter(item => !query || item.phrase.toLowerCase().includes(query));
+      return visible.length
+        ? visible.map(item => `<tr><td>${item.phrase}</td><td>${item.count}</td></tr>`).join('')
+        : '<tr><td colspan="2" class="small-text">No matching phrases found.</td></tr>';
+    }
+
+    const phraseSearch = document.getElementById('phraseSearch');
+    document.getElementById('phraseTable').innerHTML = renderPhrases();
+    phraseSearch.addEventListener('input', () => { document.getElementById('phraseTable').innerHTML = renderPhrases(phraseSearch.value); });
+
+    const themeToggle = document.getElementById('themeToggle');
+    const paletteToggle = document.getElementById('paletteToggle');
+    function setTheme(mode) {
+      if (mode === 'dark') {
+        document.body.classList.add('dark-mode');
+        themeToggle.textContent = 'Light mode';
+      } else {
+        document.body.classList.remove('dark-mode');
+        themeToggle.textContent = 'Dark mode';
+      }
+      localStorage.setItem('reportTheme', mode);
+    }
+    function setPalette(mode) {
+      if (mode === 'accent') {
+        document.body.classList.add('accent-mode');
+        paletteToggle.textContent = 'Default palette';
+      } else {
+        document.body.classList.remove('accent-mode');
+        paletteToggle.textContent = 'Accent palette';
+      }
+      localStorage.setItem('reportPalette', mode);
+    }
+    const savedTheme = localStorage.getItem('reportTheme') || 'light';
+    const savedPalette = localStorage.getItem('reportPalette') || 'default';
+    setTheme(savedTheme);
+    setPalette(savedPalette);
+    themeToggle.addEventListener('click', () => setTheme(document.body.classList.contains('dark-mode') ? 'light' : 'dark'));
+    paletteToggle.addEventListener('click', () => setPalette(document.body.classList.contains('accent-mode') ? 'default' : 'accent'));
+
+    const downloadCsv = document.getElementById('downloadCsv');
+    function downloadSummaryCsv() {
+      const rows = [
+        ['Metric','Value'],
+        ['Document', report.document],
+        ['Sentence count', report.sentence_count],
+        ['Token count', report.token_count],
+        ['Unique terms', report.unique_terms],
+        ['Themes detected', report.themes.length],
+        ['KPI sentences', report.kpis.length],
+        ['Forward-looking sentences', report.uncertainty_sentences.length],
+        ['Positive sentences', report.sentiment_summary.positive],
+        ['Neutral sentences', report.sentiment_summary.neutral],
+        ['Negative sentences', report.sentiment_summary.negative]
+      ];
+      const csv = rows.map(r => r.map(v => `"${String(v).replace(/"/g, '""')}"`).join(',')).join('\n');
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `${report.document.replace(/\.[^/.]+$/, '')}_summary.csv`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    }
+    downloadCsv.addEventListener('click', downloadSummaryCsv);
+
+    const highlights = document.getElementById('highlights');
+    const topTerm = report.top_terms[0]?.term || 'N/A';
+    const topPhrase = report.top_phrases[0]?.phrase || 'N/A';
+    const leadingTheme = report.themes[0]?.theme || 'N/A';
+    highlights.innerHTML = [
+      `Top repeated term: <strong>${topTerm}</strong>`,
+      `Most frequent phrase: <strong>${topPhrase}</strong>`,
+      `Top theme: <strong>${leadingTheme}</strong> with ${report.themes[0]?.term_hits || 0} hits`,
+      `Positive sentences: <strong>${report.sentiment_summary.positive}</strong>, negative: <strong>${report.sentiment_summary.negative}</strong>`,
+      `Detected <strong>${report.kpis.length}</strong> KPI-related sentences for metrics such as revenue, margin, EPS, and cash flow.`
+    ].map(item => `<li style="margin-bottom: 10px;">${item}</li>`).join('');
+
     new Chart(document.getElementById('termsChart'), {
       type: 'bar',
-      data: { labels: report.top_terms.map(x => x.term), datasets: [{ data: report.top_terms.map(x => x.count) }] },
-      options: { plugins: { legend: { display: false } } }
+      data: {
+        labels: report.top_terms.map(x => x.term),
+        datasets: [{ label: 'Frequency', data: report.top_terms.map(x => x.count), backgroundColor: '#4338ca' }]
+      },
+      options: { responsive: true, plugins: { legend: { display: false } }, scales: { x: { ticks: { maxRotation: 45, minRotation: 0 } } } }
     });
+
     new Chart(document.getElementById('sentimentChart'), {
       type: 'doughnut',
-      data: { labels: ['Positive', 'Neutral', 'Negative'], datasets: [{ data: [report.sentiment_summary.positive, report.sentiment_summary.neutral, report.sentiment_summary.negative] }] }
+      data: {
+        labels: ['Positive', 'Neutral', 'Negative'],
+        datasets: [{ data: [report.sentiment_summary.positive, report.sentiment_summary.neutral, report.sentiment_summary.negative], backgroundColor: ['#16a34a', '#6b7280', '#dc2626'] }]
+      },
+      options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
+    });
+
+    document.getElementById('downloadJson').addEventListener('click', () => {
+      const blob = new Blob([JSON.stringify(report, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `${report.document.replace(/\.[^/.]+$/, '')}_report_data.json`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
     });
   </script>
 </body>

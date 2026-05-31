@@ -1,0 +1,2 @@
+[console_scripts]
+finance-earnings-nlp-analysis = finance_earnings_nlp_analysis.cli:main

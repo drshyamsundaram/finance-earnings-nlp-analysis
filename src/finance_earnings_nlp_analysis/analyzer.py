@@ -41,6 +41,13 @@ class FinanceEarningsNLPAnalyzer:
                 'neutral': int((frames['sentiment_analysis']['score'] == 0).sum()),
                 'negative': int((frames['sentiment_analysis']['score'] < 0).sum())
             },
+            'sentiment_examples': {
+                'positive': frames['sentiment_analysis'].sort_values('score', ascending=False).head(4).to_dict(orient='records'),
+                'negative': frames['sentiment_analysis'].sort_values('score').head(4).to_dict(orient='records'),
+                'neutral': frames['sentiment_analysis'][frames['sentiment_analysis']['score'] == 0].head(4).to_dict(orient='records')
+            },
+            'uncertainty_sentences': frames['uncertainty_analysis'][frames['uncertainty_analysis']['hedge_hits'] > 0].sort_values('hedge_hits', ascending=False).head(12).to_dict(orient='records'),
+            'most_uncertain': frames['uncertainty_analysis'][frames['uncertainty_analysis']['hedge_hits'] > 0].sort_values('hedge_hits', ascending=False).head(6).to_dict(orient='records'),
             'themes': frames['theme_analysis'].to_dict(orient='records'),
             'topics': frames['topic_model_analysis'].to_dict(orient='records'),
             'kpis': frames['kpi_extraction'].head(12).to_dict(orient='records')
