@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finance Earnings NLP analysis</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; background: #f7f6f2; color: #1f1d18; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .card { background: white; border: 1px solid #ddd; border-radius: 12px; padding: 18px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 8px; border-bottom: 1px solid #eee; text-align: left; }
+  </style>
+</head>
+<body>
+  <h1>Finance Earnings NLP analysis</h1>
+  <div id="summary"></div>
+  <div class="grid">
+    <div class="card"><h2>Top terms</h2><canvas id="termsChart"></canvas></div>
+    <div class="card"><h2>Sentiment mix</h2><canvas id="sentimentChart"></canvas></div>
+  </div>
+  <div class="grid">
+    <div class="card"><h2>Themes</h2><table><thead><tr><th>Theme</th><th>Hits</th></tr></thead><tbody id="themeTable"></tbody></table></div>
+    <div class="card"><h2>KPI extraction</h2><div id="kpiList"></div></div>
+  </div>
+  <script>
+    const report = __REPORT_DATA__;
+    document.getElementById('summary').innerHTML = `<p><strong>${report.document}</strong> · ${report.sentence_count} sentences · ${report.token_count} tokens · ${report.unique_terms} unique terms</p>`;
+    document.getElementById('themeTable').innerHTML = report.themes.map(x => `<tr><td>${x.theme}</td><td>${x.term_hits}</td></tr>`).join('');
+    document.getElementById('kpiList').innerHTML = report.kpis.map(x => `<p>${x.kpi_sentence}</p>`).join('');
+    new Chart(document.getElementById('termsChart'), {
+      type: 'bar',
+      data: { labels: report.top_terms.map(x => x.term), datasets: [{ data: report.top_terms.map(x => x.count) }] },
+      options: { plugins: { legend: { display: false } } }
+    });
+    new Chart(document.getElementById('sentimentChart'), {
+      type: 'doughnut',
+      data: { labels: ['Positive', 'Neutral', 'Negative'], datasets: [{ data: [report.sentiment_summary.positive, report.sentiment_summary.neutral, report.sentiment_summary.negative] }] }
+    });
+  </script>
+</body>
+</html>
