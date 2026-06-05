@@ -1,0 +1,205 @@
+sentence,tags,classification
+"Our momentum was on full display at Cloud Next last week, and the month of May brings even more with IO, Brandcast and GML.",Product Momentum,Opportunity
+"In Search & Other, revenue grew 19%.",Product Momentum,Risk
+"People love our AI experiences like AI Mode and AI Overviews, and they're coming back to Search more.",Product Momentum,Risk
+Cloud accelerated again this quarter due to strong demand for our AI products and infrastructure.,"Demand, CapEx, Product Momentum",Opportunity
+"Revenue grew 63%, exceeding $20 billion for the first time, and our backlog nearly doubled quarter on quarter to over $460 billion.",Demand,Risk
+"Gemini Enterprise is seeing tremendous momentum, with 40% growth quarter over quarter in paid monthly active users.",Product Momentum,Opportunity
+"In Subscriptions, this was our strongest quarter ever for our consumer AI plans, primarily driven by adoption of the Gemini App.",Product Momentum,Opportunity
+"Overall, the number of paid subscriptions has now reached 350 million, with YouTube and Google One being the key drivers.",Product Momentum,Risk
+"Then Search and Cloud, followed by YouTube and Other Bets.",Product Momentum,Risk
+Starting with our AI infrastructure.,CapEx,Risk
+"Our custom TPUs, Axion CPUs, and the latest NVIDIA GPUs continue to form the industry's widest variety of compute options.NVIDIA GPUs are a core part of our AI accelerator portfolio, and we will be among the first to offer NVIDIA Vera Rubin NVL72, in addition to the Blackwell- and Hopper-based instances already available.",CapEx,Risk
+"At Cloud Next, we introduced our eighth generation TPUs, individually specialized for training and serving, and able to take on the most demanding agentic workloads.","Demand, Product Momentum",Risk
+"TPU 8i delivers cost effective, low latency inference, with 80% better performance per dollar than the prior generation.",Margins,Risk
+This exceptional infrastructure powers our world class AI research.,"CapEx, Product Momentum",Risk
+"Gemini 3.1 Pro continues to push the frontier in reasoning, multimodal understanding and cost.","Margins, Product Momentum",Risk
+"We've quickly expanded the Gemini 3.1 series of models to offer more choices for developers, including our cost efficient Flash models. 3.1 Flash Live, our latest audio model, has improved precision and reasoning, making voice interactions more natural and intuitive.","Margins, Product Momentum",Risk
+It's now powering conversational features in Search and the Gemini app.,Product Momentum,Risk
+"And with 3.1 Pro, our Deep Research agent got a big upgrade, including MCP support and native visualizations.",Product Momentum,Risk
+Lyria 3 has generated over 150 million songs since launching on the Gemini App.,Product Momentum,Risk
+And Veo 3.1 Lite is our most cost efficient video model to date.,Margins,Risk
+"It's now in the Gemini app, AI Mode and Gemini in Chrome.",Product Momentum,Risk
+"Early traction has been good, and this month we integrated Nano Banana 2 to make personalized image creation possible in the Gemini app.",Product Momentum,Risk
+Maps recently got its most significant upgrade in over a decade with Gemini.,Product Momentum,Risk
+"And the Pixel 10a launched to positive reviews, providing the best of Google's AI features like Gemini Live and AI powered camera features.",Product Momentum,Risk
+"AI continues to drive Search usage, and queries are at an all time high.","Demand, Product Momentum",Risk
+"We continue to invest in improvements to AI Overviews, which are driving overall Search growth, and we are also seeing strong growth in both users and usage of AI Mode globally.","Demand, Product Momentum",Opportunity
+"We also shipped agentic experiences, like restaurant booking, to new countries and new multimodal capabilities like Search Live globally.",Product Momentum,Risk
+"Even as we have brought new AI features into our results page, we have reduced Search latency by more than 35% over the past five years.",Product Momentum,Risk
+"And since upgrading AI Overviews and AI Mode to Gemini 3, we have reduced the cost of core AI responses by more than 30%, thanks to continued hardware and engineering breakthroughs.","Margins, Product Momentum",Risk
+We are excited to share more about Search at IO.,Product Momentum,Risk
+"Now, over to Google Cloud.",Product Momentum,Risk
+Google Cloud is differentiated because we are the only provider to offer first party solutions across the entire Enterprise AI stack.,Product Momentum,Risk
+"Our growth in revenue, operating margin, and backlog highlights this differentiation.","Demand, Margins",Opportunity
+Our Enterprise AI solutions have become our primary growth driver for Cloud for the first time.,Product Momentum,Opportunity
+"At Cloud Next last week, we introduced hundreds of new capabilities across our vertically optimized AI stack that are designed to work together for our enterprise customers.",Product Momentum,Risk
+"We introduced a new Gemini Enterprise Agent Platform that empowers users to build, orchestrate, govern and optimize agents with the controls that enterprise customers need.",Product Momentum,Risk
+"Along with new capabilities in Gemini Enterprise app — like Projects, Canvas, Long Running Agents and Skills, every employee can build agents.",Product Momentum,Risk
+"In Q1, Gemini Enterprise paid monthly active users grew 40% quarter over quarter.",Product Momentum,Risk
+Our partner ecosystem plays an increasingly critical role in driving Gemini Enterprise adoption.,Product Momentum,Risk
+This momentum is leading to accelerating usage of our models.,Demand,Opportunity
+"Over the past 12 months, 330 Google Cloud customers each processed over one trillion tokens. 35 reached the ten trillion token milestone.",Product Momentum,Risk
+"To give agents business context from enterprise data to help them reason intelligently, we introduced a new Agentic Data Cloud.",Product Momentum,Risk
+"It includes a cross cloud Lakehouse, Knowledge Catalog and Deep Research Agents, which combine research and analytical skills.",Product Momentum,Risk
+"As an example, using our data cloud, American Express is enabling agentic commerce at scale by moving an enterprise data platform, along with hundreds of production applications, to BigQuery.",Product Momentum,Risk
+Our strength with Big Query and Gemini Enterprise has led Gemini powered workflows in Big Query to grow over 30X year over year.,Product Momentum,Risk
+"As cybersecurity threats from the use of AI models accelerate, our expertise in AI and Cybersecurity is driving strong demand for our Agentic Defense offerings.",Demand,Opportunity
+"In March, we closed the acquisition of Wiz, a leading cloud and security AI platform, which is an incredible fit for the moment we are in.",Product Momentum,Risk
+"We introduced new Gemini powered agents for threat detection, continuous red teaming, and automated remediation to protect software code and Cloud systems Customers like Deloitte, Priceline and Shell are using our agentic defense to strengthen their security posture.",Product Momentum,Risk
+All of this is powered by the AI Infrastructure I mentioned earlier.,CapEx,Risk
+"Our TPUs continue our leadership in performance, cost and power efficiency for customers like Thinking Machines Lab, Hudson River Trading and Boston Dynamics.",Margins,Risk
+"As TPU demand grows from AI labs, capital markets firms, and high performance computing applications, we will begin to deliver TPUs to a select group of customers in their own data centers in a hardware configuration to expand our addressable market opportunity.","Demand, CapEx, Competition",Opportunity
+"Turning to YouTube, where our momentum continues.",Product Momentum,Opportunity
+"In the Living Room, U.S. viewers are watching over 200 million hours of YouTube content daily.",Product Momentum,Risk
+"And in Q1, our YouTube Music and Premium offering saw its largest quarterly increase in the total number of non-trial subscribers, both globally and in the US, since YouTube Premium launched in June 2018.",Product Momentum,Risk
+"As usual, I'll start with the performance of Google Services, then cover the progress we are delivering across Search, YouTube and Partnerships.",Product Momentum,Risk
+"Google Services revenues were $90 billion for the quarter, up 16% year on year, primarily driven by the continued growth of Search.",Product Momentum,Opportunity
+"Adding some further color to our results Search and Other delivered 19% growth, primarily driven by Retail and Finance.",Product Momentum,Opportunity
+"YouTube advertising revenues grew 11% driven by Direct Response, followed by Brand.",Product Momentum,Risk
+"Starting with Search and Other revenues, which delivered $60 billion in revenue for the quarter.",Product Momentum,Risk
+"We are accelerating the deployment of Gemini across our entire ads infrastructure to help businesses reach more customers, in more places, than ever before.","CapEx, Product Momentum",Risk
+"This is driving significant improvements across all areas of marketing, and continues to fuel new performance breakthroughs across three areas critical for our customers' success ads quality, advertiser tools and new AI user experiences.",Competition,Risk
+AI is boosting our ability to deeply understand user intent for a given search query and to find the most relevant ads.,Product Momentum,Risk
+"In Maps, we are using Gemini to ensure Promoted Pins are deeply relevant to a user's surroundings, location of interest, history and intent.",Product Momentum,Risk
+"Over the past year, we've made over 20 improvements to Search and Shopping bid strategies.",Product Momentum,Risk
+Smart Bidding now uses Gemini to match user intent to an advertiser's products and services more accurately and further drive performance.,Product Momentum,Risk
+"Second, on advertiser tools, where Gemini helps advertisers drive more efficient and effective campaigns.",Product Momentum,Risk
+People no longer search in fragments; they search conversationally and share more context.,Product Momentum,Risk
+"We launched AI Max to help advertisers adapt to this new way of searching, and, earlier this month, it moved out of beta, with improved performance quality across targeting and creative capabilities.",Product Momentum,Risk
+"And Etsy saw a 10% search volume uplift, with 15% of those queries being net new to their business.",Product Momentum,Risk
+"For instance, more than 30% of our customers' Search spend now uses AI enabled campaigns AI Max or Performance Max.",Product Momentum,Risk
+"Third, how we monetize new AI user experiences in Search.",Product Momentum,Risk
+Ulta Beauty just last week launched agentic commerce within AI Mode in Search and the Gemini app.,Product Momentum,Risk
+"Shoppers can now review product recommendations, compare options and complete streamlined checkout for eligible purchases, directly within AI Mode and Gemini.",Product Momentum,Risk
+"Turning to YouTube, which has now led streaming watch time in the U.S. for three consecutive years.",Product Momentum,Risk
+We are applying Gemini to drive better matching and discovery between brands and creators of all sizes.,Product Momentum,Risk
+"Gemini now powers YouTube Creator Partnerships, a centralized platform integrated directly into YouTube Studio for creators and Google Ads for advertisers.",Product Momentum,Risk
+"For example, Supergoop partnered with YouTube creator Liza Koshy on a multi-format Shorts and long form CTV campaign, resulting in a 93% lift for their glowscreen product and a 55% overall brand lift.",Product Momentum,Risk
+"Looking at monetization across YouTube, momentum continues in Shorts and the Living Room, and Demand Gen continues to drive momentum in Direct Response, in particular with smaller advertisers.","Demand, Product Momentum",Opportunity
+"YouTube Subscriptions revenue continues to grow faster than ads, particularly YouTube Music & Premium.",Product Momentum,Risk
+"By the end of Q1, YouTube Premium Lite was fully launched in 23 countries and we plan to launch in more than a dozen new countries in Q2.",Product Momentum,Risk
+"This quarter Kingfisher, Target and Wayfair closed significant multi year Cloud and Ads deals.",Product Momentum,Risk
+"Total cost of revenue was $41.3 billion, up 14%.",Margins,Risk
+"Other Cost of Revenues was $26 billion, up 15%, primarily driven by increases in depreciation, content acquisition costs largely, for YouTube, and compensation.","Margins, Product Momentum",Risk
+"R&D expenses increased by 26%, driven by compensation due to investment in AI talent, as well as depreciation.",Margins,Risk
+"Sales and Marketing expenses were up 23%, driven primarily by marketing investments to support the Gemini app and Search, as well as compensation.","Competition, Product Momentum",Risk
+"G&A expenses increased 21%, primarily due to an increase in compensation and costs related to legal and other matters.","Margins, Regulation",Risk
+"Operating income increased 30% to $39.7 billion, and operating margin was 36.1%.",Margins,Risk
+"Other income and expenses was $37.7 billion, representing a meaningful increase from the prior year, primarily due to unrealized gains in our nonmarketable equity securities portfolio.",Competition,Risk
+"CapEx was $35.7 billion in the first quarter, with the overwhelming majority of this spend in technical infrastructure to support the AI opportunities we see across the company.",CapEx,Risk
+"Approximately 60% of our investment in technical infrastructure this quarter was in servers, and 40% was in data centers and networking equipment.",CapEx,Risk
+We ended the quarter with $126.8 billion in cash and marketable securities and $77.5 billion in long-term debt.,Competition,Risk
+"Turning to segment results, Google Services revenues increased 16% to $89.6 billion, reflecting strong growth in Search and Subscriptions.",Product Momentum,Opportunity
+"Google Search and other advertising revenues increased by 19% to $60.4 billion, driven by growth in the retail and financial services verticals.",Product Momentum,Opportunity
+"YouTube advertising revenues increased 11% to $9.9 billion, driven by Direct Response advertising as well as Brand.",Product Momentum,Risk
+"Subscriptions, Platforms & Devices revenues increased 19% this quarter to $12.4 billion due to strong growth in both YouTube subscriptions, particularly in YouTube Music and Premium, and Google One subscriptions, which benefited from increased demand for AI plans.","Demand, Product Momentum",Opportunity
+"Google Services operating income increased 24% to $40.6 billion, and operating margin was 45.3%.",Margins,Risk
+The Google Cloud segment delivered outstanding results in the first quarter.,Product Momentum,Risk
+Cloud revenues accelerated across all key areas and were up 63% to $20 billion.,Product Momentum,Risk
+"Revenue growth was driven by strong performance in GCP, which continued to grow at a rate that was much higher than Cloud's overall revenue growth rate.",Product Momentum,Opportunity
+"The largest contributor to Cloud's growth this quarter was AI solutions, driven by strong demand for industry leading models, including Gemini 3.","Demand, Product Momentum",Opportunity
+"In addition, we had strong growth in AI infrastructure due to continued deployment of TPUs and GPUs; and core GCP continues to be a sizable contributor, driven by demand for infrastructure and other services such as cybersecurity and data analytics.","Demand, CapEx",Opportunity
+"Cloud operating income was $6.6 billion, tripling year over year, and operating margin increased from 17.8% in the first quarter of last year to 32.9%.","Margins, Product Momentum",Risk
+"Google Cloud's backlog nearly doubled sequentially, reaching $462 billion at the end of the first quarter.","Demand, Product Momentum",Risk
+The increase was driven by strong demand for our enterprise AI offerings and the inclusion of TPU hardware sales that Sundar referenced earlier.,Demand,Opportunity
+"The majority of the backlog is related to typical GCP contracts, and we expect to recognize just over 50% of the backlog as revenue over the next 24 months.",Demand,Risk
+"In Google Cloud, as Sundar mentioned, we will begin to deliver TPU hardware to a select group of customers in their own data centers.","CapEx, Product Momentum",Risk
+"And finally, we're excited to welcome the Wiz team to Google Cloud with the closing of the acquisition in March, and are very pleased with the performance to date.",Product Momentum,Risk
+"First, Wiz will be reporting in the Google Cloud segment.",Product Momentum,Risk
+"And second, we expect a low single digit percentage point headwind to Cloud's operating margin for the remainder of 2026 related to the acquisition.","Margins, Product Momentum",Risk
+"Moving to investment, we are updating our full year 2026 CapEx guidance range to $180 to $190 billion, up from our previous estimate of $175 to $185 billion, to now include investment related to the acquisition of Intersect, which closed in March.",CapEx,Risk
+We are seeing unprecedented internal and external demand for AI compute resources.,"Demand, CapEx",Risk
+"The investment we're making in AI is delivering strong growth, as evidenced by the record revenue and backlog growth in Google Cloud and strong performance in Google Services.","Demand, Product Momentum",Opportunity
+"As a result, we expect our 2027 CapEx to significantly increase compared to 2026.",CapEx,Risk
+"In terms of expenses, as we've discussed previously, the significant increase in our investments in technical infrastructure will continue to put pressure on the P&L in the form of higher depreciation expense and related data center operations costs, such as energy.","Margins, CapEx",Risk
+"We also expect to continue hiring in key investment areas such as AI and Cloud, and are investing in marketing to support our AI products.","Competition, Product Momentum",Risk
+"We look forward to sharing more in the coming weeks at IO, Google Marketing Live, and Brandcast.",Competition,Risk
+"The first one, Sundar, on a recent podcast, you talked about how you were acutely constrained on compute, something you focused on almost every week to make sure you're deploying capacity correctly.",CapEx,Risk
+"As you sort of look at the Search business, what are the areas that you are most excited about applying next generation compute toward, to sort of generate an ROIC on that return in Search in the next 12 months Then the second one is on the sale of the TPUs to third parties.","CapEx, Product Momentum",Risk
+"Can you help us philosophically understand the strategy around pricing them, given the high ROIC of using TPUs to power multiyear Google Cloud workloads, a little bit Thanks.",Product Momentum,Risk
+I'll take the Search one first.,Product Momentum,Risk
+"Obviously, you've seen we are taking advantage of all our investments in building the Gemini models, and both obviously applying it in Search and the Gemini app, driving innovations in AI Overviews and AI Mode.",Product Momentum,Risk
+And they're all contributing to the increased usage of the product.,Demand,Risk
+"I think bringing agentic workflows to consumers in a way that it's easy for them to do, including in the context of Search, I see as a huge opportunity ahead, and obviously, we are in very, very early innings of all that.",Product Momentum,Opportunity
+"But our investments in our full stack of AI approach I think puts us in a good position to bring those experiences to Search, and I'm pretty excited about it.",Product Momentum,Risk
+"On the second question around TPUs, obviously, we do think about it as what are we doing through Google Cloud to help our customers, and that's the framework with which we think about it.",Product Momentum,Risk
+"In that context, there are situations where it makes sense, for example, you take customers like capital markets, where they're running these highly performant AI workloads, they wanted TPUs in their data centers.","CapEx, Competition",Risk
+But I do think we step back and think about it overall as the opportunity for Google Cloud.,Product Momentum,Opportunity
+A lot of it is providing infrastructure through Cloud.,"CapEx, Product Momentum",Risk
+"But again, we do take ROIC approach, and some of it helps us get more economies of scale, scale in our overall compute environment as well.",CapEx,Risk
+"Anat, you talked about 2027 CapEx, that it will increase significantly.",CapEx,Risk
+"And I know you didn't quantify it, but how do you think about the current CapEx trajectory's ability to service this massive backlog that you've built up in just the last quarter, and what will no doubt increase going forward Then, Philipp, can you just talk more about the drivers of Search queries at an all time high And then how you're thinking about how much room there may be to increase coverage of Search queries, just the ability to show Ads against the higher percentages of queries than the 20% you've been at historically.","Demand, CapEx, Product Momentum",Risk
+Let me start with your first question on CapEx and how we think about CapEx increase going into 2027.,CapEx,Risk
+You've seen us over the past several years increase CapEx every year.,CapEx,Risk
+"And we have done it very thoughtfully to meet the demand that we are seeing, both from external customers as well as demands across the organization.",Demand,Risk
+"And you're seeing the proof point, the ROIC on that, in terms of just the growth rate we're seeing, whether it's growth rate within Search or certainly the Cloud business, and the opportunity we have within the Cloud backlog.","Demand, Product Momentum",Opportunity
+"So as we're seeing that robust demand across the business, we are looking at what can we do to support that growing demand and the opportunity ahead of us, and increasing CapEx to meet that demand we’ll provide more clarity in a future earnings call about what that number will be.","Demand, CapEx",Opportunity
+"The strength we saw in Search was not due to a single driver, but was really the result of many parts of our business showing strength and working very well together.",Product Momentum,Risk
+And we've also been able to generate very strong Ads performance while significantly evolving the Search results.,Product Momentum,Opportunity
+"We see AI Overviews and AI Mode continue to drive greater Search usage and growth in overall queries, including in commercial queries.","Demand, Product Momentum",Opportunity
+"And overall, just the understanding that we have with Gemini on intent has just significantly expanded our ability to deliver Ads on longer, more complex searches that were previously really difficult to monetize.",Product Momentum,Risk
+"So, and I shared earlier, we are deploying our Gemini models now across all of our Ads infrastructure, and it's really driving improvements across the big three areas that I highlighted in my prepared remarks.","CapEx, Product Momentum",Risk
+"The first one, just building on the answers so far, when you look at the backlog you disclosed today, Sundar, would love to know if you can come back to your comments on AI infrastructure and your unique approach and how that positions you to either build capacity, scale compute, and do it in a way that is, as Anat said, sort of effective from a margin standpoint as well as a compute standpoint Just to understand where you sit competitively in your mind relative to others.","Demand, Margins, CapEx, Competition",Risk
+"We are unique in the market because of our vertically optimized AI stack and the way we co-develop the components from our infrastructure and models, to platforms and the tools, to applications and agents.","CapEx, Competition",Risk
+And I think we are the only provider on the market that offers all of these in a vertical stack.,Competition,Risk
+"So overall, again, to my earlier comments to Brian, I think about it all as Google Cloud.",Product Momentum,Risk
+"And I think we are doing it based on tangible demand signals we are seeing, and it's not just on the revenue side, but I'm talking from an ROIC framework.",Demand,Risk
+"And it will help power a new checkout experience in AI Mode, in Search, in the Gemini app, and allowing shoppers to actually check out from select merchants right as they're researching on Google and going through this journey.",Product Momentum,Risk
+"Philipp, just to elaborate a little bit, as you look at carrying the ad words business from kind of the old way of doing things to this new agentic frictionless shopping way, how do you see the price and volume growth trends for core ad words evolving as you start implementing more agentic workflows in Search Philipp Schindler, SVP and CBO, Google Look, our number one focus is obviously on the user experience here, and I think the most important part in this is what I mentioned before.",Product Momentum,Opportunity
+"Sundar, if I can connect Brian's question and Eric's question and go a little bit higher, I want to understand how are you deciding, how are you allocating which divisions and projects get excess capacity, even though you're constrained How do you decide between all the internal projects you have and the external projects What types of screens are you running to decide who gets the ample capacity Then for Philipp, I noticed that you said this on the Gemini app, there's more and more images that come to you in the shopping journey.",Product Momentum,Risk
+Can you talk about your thoughts about adding advertising on that app and what's guiding your decision making here on adding ads on Gemini Thanks.,Product Momentum,Risk
+"I think, great question on an ongoing basis, and I'm looking forward to Gemini helping me more and more as I'm thinking that through.",Product Momentum,Risk
+"So what do you need for training these models And so, effectively, the compute needed for GDM, because it's a foundation for everything we do.",CapEx,Risk
+"We do long range plans on our core areas, be it Search, be it YouTube, and so on, as well as what we see in Google Cloud.",Product Momentum,Risk
+"And obviously, in Google Cloud, we are providing enterprise AI solutions, which this quarter had an 800% year on year increase from the prior year.",Product Momentum,Risk
+"So we're seeing strong demand for Gemini enterprise, our AI solutions there.","Demand, Product Momentum",Opportunity
+We see strong demand for infrastructure in Google Cloud.,"Demand, CapEx, Product Momentum",Opportunity
+"And as I said earlier, in certain cases, we are seeing demand for TPU hardware; TPU hardware in other data centers as well.","Demand, CapEx",Risk
+"Obviously, we are compute constrained in the near term.",CapEx,Risk
+"And as an example, our Cloud revenue would have been higher if we were able to meet the demand.","Demand, Product Momentum",Risk
+"Philipp Schindler, SVP and CBO, Google And to the second part of your question, as I said in my previous answer, we are obviously focused on the user first and creating a really great user experience with all of our product, especially on newer products; and specifically on monetization in the Gemini app, our focus right now is on AI Mode.",Product Momentum,Risk
+But it's fair to say that we really believe the format that works well in AI Mode would transfer successfully to Gemini app.,Product Momentum,Risk
+"And so, today in the Gemini app, we're focused on the free tier and subscriptions and our AI plans were a sizable contributor to our Google One revenue growth.",Product Momentum,Opportunity
+"Philipp, one more on Search performance, if I can.",Product Momentum,Risk
+"And I guess besides higher query volume, is it fair to conclude that consumers are using these AI tools, Google's or otherwise, and it's shrinking their purchasing journeys, converting at higher rates And if so, is there a way to dimensionalize how much of the strength of Search is being driven by that behavioral change, against perhaps some of the newer advertiser AI tools that you've been launching and rolling out Thank you.",Product Momentum,Risk
+"Philipp Schindler, SVP and CBO, Google I think the way to think about it is really to think about the expansionary moment we see here for Search.",Product Momentum,Risk
+"AI is fundamentally changing how the world searches for, and how it accesses information.",Product Momentum,Risk
+"Traditional Search really started with ten blue links, and now we have AI Overviews and AI Mode.",Product Momentum,Risk
+"And they have made Search more intelligent than ever, and they let you ask far more complex questions.",Product Momentum,Risk
+And we have Lens or Circle to Search.,Product Momentum,Risk
+Search Live is now available to all countries and languages that support AI Mode.,Product Momentum,Risk
+We have our AI driven Search campaigns.,Product Momentum,Risk
+"With margins continuing to expand here, I wanted to understand maybe, if you can break down the cost drivers or really the drivers of margin expansion, particularly amongst Cloud.","Margins, Product Momentum",Risk
+"There's a thesis out there that AI revenues are a lower margin, in general, but we are seeing margins improve.",Margins,Risk
+So more insights on just the Cloud business and what's driving that margin expansion.,"Margins, Product Momentum",Risk
+"Obviously, demand, maybe pricing, but that would be helpful.",Demand,Risk
+Let me help unpack the margin expansion.,Margins,Risk
+"There are pushes and pulls across the business, including within Cloud specifically.",Product Momentum,Risk
+"When we see this robust, strong revenue growth, both in Cloud and Google Services, it does provide leverage all the way down to the bottom line within the income statement.",Product Momentum,Opportunity
+"And it's not just how we operate the business, but even in areas such as our technical infrastructure, where we are investing these significant CapEx investments into our data centers and servers, we are looking at how we drive scientific process innovation within that organization.",CapEx,Risk
+And that is reflected both in Cloud and Google Services as we allocate cost based on consumption.,"Margins, Product Momentum",Risk
+"In the past, I did talk about the depreciation associated with these investments that is hitting both Google Cloud and Google Services.","Margins, Product Momentum",Risk
+"Google Cloud expanded margin quite significantly from a year ago, as you've seen in our numbers that we've just previewed.","Margins, Product Momentum",Risk
+"And a lot of it, again, is the topline growth that Google Cloud is providing or producing, as well as an incredibly efficient way of running the business.",Product Momentum,Opportunity
+"I will give Thomas and that team a lot of credit for running a very productive organization and making sure that we are supporting our customers and providing those services and products that they want and benefit from, continue to drive topline growth, and doing this well within the middle of the income statement, all the way from very efficient technical infrastructure, thinking through how do we leverage AI across our business.",CapEx,Opportunity
+"Sundar mentioned the use of coding internally, how Gemini helps us there, optimizing our real estate footprint.",Product Momentum,Risk
+"We're going to continue to push for more efficiency, knowing that we're going to have the headwind associated with the depreciation coming with a higher CapEx level.","Margins, CapEx",Risk
+"First, on the Cloud and capacity, could you speak about how your verticalized capabilities enable you to navigate a complicated supply chain, especially one experiencing inflation and constraints Are you factoring any supply chain price inflation into '26 and '27 CapEx commentary As part of that, maybe Anat, could you update us on the allocation of compute capacity, internal versus external Cloud Then one more, please.","CapEx, Product Momentum",Risk
+"When you think about Search query volume growth, we're clearly seeing expanding use cases.",Product Momentum,Opportunity
+"Do you see future use cases where certain consumer use cases are more effectively monetized via Subscriptions, and maybe a different mix of the consumer, quote unquote, the new Search opportunity Thank you.",Product Momentum,Opportunity
+"On overall compute, I think I spoke earlier on how we think about allocation of compute across our businesses.",CapEx,Risk
+"Our supply chain partners see the strength of our diversified businesses and the demand we drive, and our frontier technology and the investments all through the stack.",Demand,Risk
+"In terms of Search, look, I think we are proud that we've built models that, we are at the frontier, across the Pareto frontier.",Product Momentum,Risk
+"We do think about capability and the cost frontier deeply, so that we can serve users at scale.",Margins,Risk
+But at the same time we can bring in the most powerful models for the most demanding queries.,Demand,Risk
+"And we are already providing various tiers of our subscription plans in which you can get access to more powerful models, and that applies across your Google user experience, including in Search.",Product Momentum,Risk
+"We saw a very robust quarter in terms of our AI Subscriptions growth, driven by interest in getting access to better Gemini models.",Product Momentum,Opportunity
+"And so I think that sets us up well to serve the breadth of use cases people would want in all places, including Search.",Product Momentum,Risk
+Can you help us think about how you're thinking about the opportunity there And then maybe break down the backlog growth a little bit between TPUs and Cloud.,"Demand, Product Momentum",Opportunity
+"Just thinking about the margins on these big, generative AI Cloud deals, how do you think about these $100 billion deals coming in and the margins associated with those Can they be similar to your Cloud business as it is Thank you.","Margins, Product Momentum",Risk
+"Sundar Pichai, CEO, Alphabet and Google Look, overall, I would say we see tremendous interest and there's tremendous demand for both AI solutions, as well as AI infrastructure, including massive interest in our GPU offerings, as well as our TPUs.","Demand, CapEx",Risk
+And maybe I'll pass it to Anat to give some color on the backlog growth.,Demand,Opportunity
+"Anat Ashkenazi, SVP and CFO, Alphabet and Google So the backlog, the TPU hardware agreements that Sundar referenced in his prepared remarks are reflected in our Cloud backlog, the $462 billion, although the majority of the backlog is still GCP agreements.","Demand, Product Momentum",Risk
+"Now, as you think about the total backlog, just over half of it will convert to revenue in the next 24 months.",Demand,Risk
+"Justin Post (BAML) And then anything on the big AI deal margins with the generative AI companies Sundar Pichai, CEO, Alphabet and Google I think nothing to comment on any specific contracts, but overall, earlier, there were a lot of questions about how do we allocate.",Margins,Risk

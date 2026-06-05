@@ -1,0 +1,17 @@
+artifact,type
+finance-earnings-nlp-analysis.html,interactive_html
+term_frequency.csv,csv
+phrase_analysis.csv,csv
+sentiment_analysis.csv,csv
+uncertainty_analysis.csv,csv
+speaker_analysis.csv,csv
+section_analysis.csv,csv
+theme_analysis.csv,csv
+risk_opportunity_analysis.csv,csv
+key_quote_analysis.csv,csv
+entity_analysis.csv,csv
+kpi_extraction.csv,csv
+topic_model_analysis.csv,csv
+semantic_search_index.csv,csv
+cooccurrence_analysis.csv,csv
+comparative_analysis.csv,csv
