@@ -1,19 +1,24 @@
-# Finance Earnings NLP analysis
+# Finance Earnings NLP Analysis
 
-A modular Python project for transcript-driven NLP analysis of earnings calls, with an interactive HTML report and CSV extracts for analysts.
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![GitHub repo size](https://img.shields.io/github/repo-size/drshyamsundaram/finance-earnings-nlp-analysis)](https://github.com/drshyamsundaram/finance-earnings-nlp-analysis)
+[![GitHub issues](https://img.shields.io/github/issues/drshyamsundaram/finance-earnings-nlp-analysis)](https://github.com/drshyamsundaram/finance-earnings-nlp-analysis/issues)
+[![GitHub forks](https://img.shields.io/github/forks/drshyamsundaram/finance-earnings-nlp-analysis)](https://github.com/drshyamsundaram/finance-earnings-nlp-analysis/network)
 
-This sample project is designed around the Alphabet Q1 2026 earnings transcript and its themes such as Search growth, Cloud acceleration, Gemini adoption, backlog expansion, capex intensity, and forward-looking management commentary. [file:2]
+A lightweight Python toolkit for earnings call transcript analysis with a polished HTML report and CSV exports.
 
-## Features
+This repository is built around earnings transcript NLP workflows, including phrase mining, sentiment, uncertainty, theme extraction, KPI discovery, and topic modeling.
 
-- PDF or text transcript ingestion.
-- Modular NLP pipelines for terms, phrases, sentiment, uncertainty, speakers, sections, entities, topics, KPIs, co-occurrence, and semantic search index.
-- Interactive HTML report with charts, tables, filters, and search.
-- Individual CSV outputs for each analysis layer.
-- CLI entrypoint for batch-style usage.
-- Project structure suitable for GitHub publishing and extension.
+## Highlights
 
-## Project structure
+- Import transcript content from `PDF` or `TXT`
+- Generate modular NLP outputs for terms, phrases, sentiment, uncertainty, speakers, sections, entities, topics, and KPIs
+- Export analysis results as CSV files
+- Create an interactive HTML report with charts, filters, and summary cards
+- Use the CLI for repeatable analysis
+
+## Repository layout
 
 ```text
 finance-earnings-nlp-analysis/
@@ -48,31 +53,34 @@ finance-earnings-nlp-analysis/
 
 ## Installation
 
+Create a virtual environment and install the dependencies:
+
 ```bash
 python -m venv .venv
+# macOS / Linux
 source .venv/bin/activate
+# Windows PowerShell
+# .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
 
-Required packages are `pandas`, `scikit-learn`, and `PyMuPDF`, because the code uses DataFrame exports, vectorizers and topic models from scikit-learn, and `fitz` for PDF parsing. [code_file:4]
-
 ## Quick start
 
-Run against a transcript file:
+Run the analyzer against the included sample transcript:
 
 ```bash
-python -m finance_earnings_nlp_analysis --input data/sample_transcript.txt --output output
+python -m finance_earnings_nlp_analysis --input data/sample_transcript.txt --output output --template templates/report_template.html
 ```
 
-Or run the example script:
+Or run the sample helper script:
 
 ```bash
 python examples/run_sample.py
 ```
 
-## Outputs
+## Generated outputs
 
-The project writes:
+The pipeline produces the following artifacts in `output/`:
 
 - `finance-earnings-nlp-analysis.html`
 - `analysis_manifest.csv`
@@ -92,45 +100,46 @@ The project writes:
 - `cooccurrence_analysis.csv`
 - `comparative_analysis.csv`
 
-These align with the modular analysis layers already implemented in the current utility. [code_file:4]
+## Recommended badges
 
-## Architecture
+Once you add CI and release automation, consider adding these badges for better project visibility:
 
-### Core modules
+- Build status: GitHub Actions, Azure Pipelines, or Travis CI
+- Code coverage: Codecov, Coveralls, or SonarCloud
+- PyPI release: version and download count
+- Documentation status: Read the Docs or GitHub Pages
+- Dependency health: `requires.io` or Snyk
+- Security scan: GitHub Dependabot or GitHub Code Scanning
+- Maintained: `maintained` or `status` badge
 
-| Module | Responsibility |
+## Core architecture
+
+| Module | Purpose |
 |---|---|
-| `io_utils.py` | Load transcript text from PDF or TXT |
-| `text_processing.py` | Sentence splitting, tokenization, stopword filtering |
-| `metrics.py` | All NLP analysis layers and dataframe creation |
-| `report_builder.py` | Build populated interactive HTML report |
-| `export_utils.py` | Write CSV outputs and manifest |
-| `cli.py` | Command-line entrypoint |
-| `analyzer.py` | Orchestration class |
+| `io_utils.py` | Load transcripts from PDF or text files |
+| `text_processing.py` | Sentence splitting, tokenization, and normalization |
+| `metrics.py` | Compute analytics and create analysis dataframes |
+| `report_builder.py` | Render the interactive HTML report |
+| `export_utils.py` | Persist CSV files and output manifest |
+| `cli.py` | Parse CLI arguments and launch analysis |
+| `analyzer.py` | Orchestrate the workflow and build report payload |
 
-### Design principles
+## Typical workflows
 
-- Keep each analysis extract independent so analysts can reuse a single CSV without loading the whole pipeline.
-- Keep report rendering separate from NLP computation.
-- Make transcript ingestion pluggable for PDF, TXT, or future API-based sources.
-- Preserve analyst-friendly outputs with transparent intermediate tables.
+- Review earnings call themes and sentiment trends
+- Extract KPI-related sentences for financial modeling
+- Compare prepared remarks versus Q&A sections
+- Spot uncertainty and forward-looking language
+- Build analyst-ready summary reports from transcripts
 
-## Example use cases
+## Future enhancements
 
-- Earnings-call review for equity research.
-- Management tone tracking across quarters.
-- Cloud, AI, and advertising theme extraction.
-- KPI sentence harvesting for financial models.
-- Q&A analysis and speaker-level emphasis studies.
-
-## Roadmap
-
-- Prior-quarter comparative analysis and language-delta scoring.
-- Better named entity recognition with spaCy or transformer models.
-- Embedding-based semantic retrieval.
-- Multi-company batch processing.
-- Dashboard filters for prepared remarks versus Q&A.
+- Prior-quarter comparative analysis and delta scoring
+- Improved named entity recognition using transformer models
+- Embedding-based semantic retrieval and RAG pipelines
+- Multi-company batch analysis support
+- Dashboard controls for segment filtering and theme focus
 
 ## Notes
 
-The sample transcript text included in `data/sample_transcript.txt` reflects the official Alphabet Q1 2026 transcript themes and figures such as Search growth of 19%, Cloud growth of 63%, Cloud revenue above $20 billion, and backlog near $462 billion. [file:2]
+The sample transcript data is stored in `data/sample_transcript.txt` and is used for demonstration and testing.
