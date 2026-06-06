@@ -1,0 +1,19 @@
+{
+    "llm_model_name": "distilgpt2",
+    "embedding_model_name": "sentence-transformers/all-MiniLM-L6-v2",
+    "rag_data_folder": "D:\\vscode\\finance-earnings-nlp-analysis\\rag_data",
+    "vector_db_persist_dir": "D:\\vscode\\finance-earnings-nlp-analysis\\vecdb",
+    "queries_file": "D:\\vscode\\finance-earnings-nlp-analysis\\query.json",
+    "output_base_dir": "D:\\vscode\\finance-earnings-nlp-analysis\\output",
+    "use_persistent_vector_db": true,
+    "export_rag_vector_db": true,
+    "export_dir": "D:\\vscode\\finance-earnings-nlp-analysis\\vecdb_exported",
+    "llm_generation_params": {
+        "max_new_tokens": 100,
+        "num_return_sequences": 1,
+        "temperature": 0.7,
+        "top_k": 50,
+        "top_p": 0.95
+    },
+    "similarity_search_k": 5
+}
